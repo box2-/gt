@@ -1,7 +1,7 @@
 == Awesome ==
-* database wrapper [x]
+* pdo wrapper [x]
 * database schema [x]
-* xpath traversing scrapes [ ]
+* xpath traversing curl pull [x]
 ** steam [ ]
 ** amazon [ ]
 ** origin [ ]
