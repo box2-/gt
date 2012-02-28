@@ -21,7 +21,8 @@ class DB {
      */ 
     public static function getInstance(  ) { 
         if(!self::$objInstance){ 
-            require_once(dirname(__FILE__) . '/config.php');
+// -->
+            require_once(dirname(__FILE__) . '/config_.php');
             self::$objInstance = new PDO($DB_DSN, $DB_USER, $DB_PASS); 
             self::$objInstance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
         } 
@@ -39,34 +40,4 @@ class DB {
         return call_user_func_array(array($objInstance, $chrMethod), $arrArguments); 
     }
 } 
-
-
-
-	/*
-	//protected $dbh = "";
-	public $dbh = "";
-	public function __construct()
-	{
-		require_once(dirname(__FILE__) . '/config.php');
-		try
-		{
-			$this->dbh = new PDO(
-				"mysql:host=".$db_host.";dbname=".$db_name,
-				$db_user,
-				$db_pass,
-				array( PDO::ATTR_PERSISTENT => $pdo_persist));
-		}
-		catch(PDOException $e) {
-			echo $e->getMessage();
-		}
-	}
-
-	// how to call procedure, view
-	public function call_procedure($proc)
-	{
-		$stmt = $this->dbh->prepare("CALL $proc()");
-		$stmt->execute();
-	}
-	 */
-
 ?>
